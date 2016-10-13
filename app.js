@@ -3,7 +3,7 @@
 
 var express = require('express');
 var bodyParser = require('body-parser');
-var nodeFunction = require('src/nodeFunction');
+var nodeFunction = require('./src/nodeFunction');
 
 var app = express();
 
