@@ -1,18 +1,27 @@
 {
   "name": "giantsheets-googlesheet-node",
-  "description": "",
+  "description": ".",
   "version": "0.0.1",
   "license": "MIT",
   "author": "aco-over",
+  "repository": "https://github.com/aco-over/giantsheets-googlesheet-node",
   "engines": {
     "node": "~4.2"
   },
   "scripts": {
     "start": "node app.js",
     "monitor": "nodemon app.js",
-    "deploy": "gcloud app deploy"
+    "deploy": "gcloud app deploy",
+    "test": "jest"
   },
   "dependencies": {
-    "express": "^4.13.4"
+    "body-parser": "^1.15.2",
+    "express": "^4.13.4",
+    "lodash": "^4.16.4",
+    "winston": "^2.2.0",
+    "winston-gae": "^0.1.0"
+  },
+  "devDependencies": {
+    "jest": "^16.0.1"
   }
 }
