@@ -7,9 +7,22 @@ exports.loadFunction = function (name) {
   return func;
 }
 
+exports.parseArgString = function (argString) {
+  var argsRaw = JSON.parse(argString);
+  if (_.isArray(argsRaw)) {
+     return argsRaw;
+  }
+  else if (_.isObject(argsRaw)) {
+    return _.map(_.sortBy(_.toPairs(argsRaw),'0'), function (e) { return e[1];});
+  }
+  else {
+    return undefined;
+  }
+}
+
 exports.callFunction = function (name, argString) {
   var func = exports.loadFunction(name);
-  var args = JSON.parse(argString);
+  var args = exports.parseArgString(argString);
   var ret = func.apply(undefined, _.slice(args, 1));
   return ret;
 }

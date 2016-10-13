@@ -13,6 +13,11 @@ describe("app", function () {
       var ret = nodeFunction.callFunction('lodash.split', argString);
       expect(ret).toEqual(["a","b"]);
     });
+    it("object argString instead of array", function () {
+      var argString = '{"0":"lodash.split","1":"a.b","2":"."}';
+      var ret = nodeFunction.callFunction('lodash.split', argString);
+      expect(ret).toEqual(["a","b"]);
+    });
   });
   describe("nodeFunction", function () {
     it("works", function () {

@@ -29,6 +29,7 @@ app.get('/', function (req, res) {
 app.post('/api/node', function (req, res) {
   console.log(req.body);
   var ret = nodeFunction.nodeFunction(req.body)
+  console.log("ret:", ret);
   res.status(200).send(ret);
 });
 
